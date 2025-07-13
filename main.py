@@ -1,7 +1,11 @@
 import requests
 from bs4 import BeautifulSoup
 
-year = "2020"
+year = input("What year of movies would you like to explore? (default: 2020): ")
+
+if not year:
+    year = '2020'
+    
 url = f"https://www.imdb.com/search/title/?release_date={year},{year}&title_type=feature&sort=num_votes,desc"
 
 headers = {
